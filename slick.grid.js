@@ -327,8 +327,8 @@ if (typeof Slick === "undefined") {
             $canvas = $().add( $canvasTopL ).add( $canvasTopR ).add( $canvasBottomL ).add( $canvasBottomR );
 
 	    // Cache FooterRow
-            $footerRowScrollerL = $("<div class='ui-state-default slick-footerrow' />").appendTo( $paneBottomL );
-            $footerRowScrollerR = $("<div class='ui-state-default slick-footerrow' />").appendTo( $paneBottomR );
+            $footerRowScrollerL = $("<div class='ui-state-default slick-footerrow' />").appendTo( $paneTopL );
+            $footerRowScrollerR = $("<div class='ui-state-default slick-footerrow' />").appendTo( $paneTopR );
 
             $footerRowScroller = $().add( $footerRowScrollerL ).add( $footerRowScrollerR )
 
@@ -1680,7 +1680,8 @@ if (typeof Slick === "undefined") {
                   options.headerHeight +
                   getVBoxDelta($headerScrollerL) +
                   (options.showTopPanel ? options.topPanelHeight + getVBoxDelta($topPanelScroller) : 0) +
-                  (options.showHeaderRow ? options.headerRowHeight + getVBoxDelta($headerRowScroller) : 0)
+                  (options.showHeaderRow ? options.headerRowHeight + getVBoxDelta($headerRowScroller) : 0) +
+                  (options.showFooterRow ? options.footerRowHeight + getVBoxDelta($footerRowScroller) : 0)
                 : parseFloat($.css($container[0], "height", true));
 
             $paneTopL.height( paneTopH );
