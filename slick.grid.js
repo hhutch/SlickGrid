@@ -186,6 +186,9 @@ if (typeof Slick === "undefined") {
         var $headerRowScrollerL;
         var $headerRowScrollerR;
 
+        var $footerRowScrollerL;
+        var $footerRowScrollerR;
+
         var $headerRowL;
         var $headerRowR;
 
@@ -471,13 +474,11 @@ if (typeof Slick === "undefined") {
             if ( options.frozenColumn > -1 ) {
                 $headerScrollerL.width( widthL );
                 $headerRowScrollerL.width( widthL );
-                $footerScrollerL.width( widthL );
                 $footerRowScrollerL.width( widthL );
 
                 $canvasTopR.width( widthR );
                 $headerScrollerR.width( widthR );
                 $headerRowScrollerR.width( widthR );
-                $footerScrollerR.width( widthR );
                 $footerRowScrollerR.width( widthR );
             }
 
@@ -1965,6 +1966,7 @@ if (typeof Slick === "undefined") {
         function handleScroll() {
             var $headerScrollContainer = ( options.frozenColumn > -1 ) ? $headerScrollerR : $headerScrollerL;
             var $headerRowScrollContainer = (options.frozenColumn > -1 ) ? $headerRowScrollerR : $headerRowScrollerL;
+            var $footerRowScrollContainer = (options.frozenColumn > -1 ) ? $footerRowScrollerR : $footerRowScrollerL;
 
             scrollTop = $viewportScrollContainer[0].scrollTop;
 
@@ -1978,6 +1980,7 @@ if (typeof Slick === "undefined") {
                 $headerScrollContainer[0].scrollLeft = scrollLeft;
                 $topPanelScroller[0].scrollLeft = scrollLeft;
                 $headerRowScrollContainer[0].scrollLeft = scrollLeft;
+                $footerRowScrollContainer[0].scrollLeft = scrollLeft;
 
                 if ( options.frozenColumn > -1 ) {
                     if ( options.frozenRow > -1 ) {
