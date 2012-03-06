@@ -466,14 +466,19 @@ if (typeof Slick === "undefined") {
         function setCanvasWidth( widthL, widthR ) {
             $canvasTopL.width( widthL );
             $headerRowScrollerL.width(widthL);
+            $footerRowScrollerL.width(widthL);
 
             if ( options.frozenColumn > -1 ) {
                 $headerScrollerL.width( widthL );
                 $headerRowScrollerL.width( widthL );
+                $footerScrollerL.width( widthL );
+                $footerRowScrollerL.width( widthL );
 
                 $canvasTopR.width( widthR );
                 $headerScrollerR.width( widthR );
                 $headerRowScrollerR.width( widthR );
+                $footerScrollerR.width( widthR );
+                $footerRowScrollerR.width( widthR );
             }
 
             if ( options.frozenRow > -1 ) {
